@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		C04E53FE2DDA2D1E000157EB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C0FAA6352DD6A5010052B5A5 /* Alamofire */; };
+		C04E54632DDA31A5000157EB /* InputMask in Frameworks */ = {isa = PBXBuildFile; productRef = C04E54622DDA31A5000157EB /* InputMask */; };
+		C04E546D2DDA4AAC000157EB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C04E546C2DDA4AAC000157EB /* Kingfisher */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		C011467C2DD623B90030E9EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +33,7 @@
 		C01146652DD623B80030E9EF /* ltech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ltech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C011467B2DD623B90030E9EF /* ltechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ltechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01146852DD623B90030E9EF /* ltechUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ltechUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0FAA6502DD744A70052B5A5 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -65,6 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C04E546D2DDA4AAC000157EB /* Kingfisher in Frameworks */,
+				C04E53FE2DDA2D1E000157EB /* Alamofire in Frameworks */,
+				C04E54632DDA31A5000157EB /* InputMask in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +101,7 @@
 				C01146672DD623B80030E9EF /* ltech */,
 				C011467E2DD623B90030E9EF /* ltechTests */,
 				C01146882DD623B90030E9EF /* ltechUITests */,
+				C0FAA64F2DD744A60052B5A5 /* Frameworks */,
 				C01146662DD623B80030E9EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +114,14 @@
 				C01146852DD623B90030E9EF /* ltechUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C0FAA64F2DD744A60052B5A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0FAA6502DD744A70052B5A5 /* Contacts.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +144,9 @@
 			);
 			name = ltech;
 			packageProductDependencies = (
+				C0FAA6352DD6A5010052B5A5 /* Alamofire */,
+				C04E54622DDA31A5000157EB /* InputMask */,
+				C04E546C2DDA4AAC000157EB /* Kingfisher */,
 			);
 			productName = ltech;
 			productReference = C01146652DD623B80030E9EF /* ltech.app */;
@@ -208,6 +230,11 @@
 			);
 			mainGroup = C011465C2DD623B80030E9EF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C0FAA6342DD6A5010052B5A5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C04E54612DDA31A5000157EB /* XCRemoteSwiftPackageReference "input-mask-ios" */,
+				C04E546B2DDA4AAC000157EB /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C01146662DD623B80030E9EF /* Products */;
 			projectDirPath = "";
@@ -391,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -449,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -571,6 +598,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C04E54612DDA31A5000157EB /* XCRemoteSwiftPackageReference "input-mask-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RedMadRobot/input-mask-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.3.2;
+			};
+		};
+		C04E546B2DDA4AAC000157EB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.3.2;
+			};
+		};
+		C0FAA6342DD6A5010052B5A5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C04E54622DDA31A5000157EB /* InputMask */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C04E54612DDA31A5000157EB /* XCRemoteSwiftPackageReference "input-mask-ios" */;
+			productName = InputMask;
+		};
+		C04E546C2DDA4AAC000157EB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C04E546B2DDA4AAC000157EB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		C0FAA6352DD6A5010052B5A5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0FAA6342DD6A5010052B5A5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C011465D2DD623B80030E9EF /* Project object */;
 }

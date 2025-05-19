@@ -1,0 +1,83 @@
+# .swiftlint.yml
+
+# Paths to include/exclude
+included:
+  - Sources
+  - App
+  - Modules
+  - Features
+
+excluded:
+  - Pods
+  - Carthage
+  - Build
+  - fastlane
+  - .github
+  - "**/Generated/*"
+  - "**/*.xib"
+  - "**/*.storyboard"
+
+# Opt-in rules that are useful for UIKit apps
+opt_in_rules:
+  - empty_count
+  - first_where
+  - discouraged_direct_init
+  - closure_end_indentation
+  - explicit_init
+  - joined_default_parameter
+  - redundant_nil_coalescing
+  - unneeded_parentheses_in_closure_argument
+
+# Disabled rules you might not need in UIKit projects
+disabled_rules:
+  - identifier_name # UIKit sometimes uses short names like x/y/w/h
+  - line_length # Often violated in Interface Builder code or long localized strings
+  - function_body_length
+  - type_body_length
+  - file_length
+
+# Customizable rules
+line_length:
+  warning: 120
+  error: 200
+  ignores_comments: true
+  ignores_urls: true
+
+type_name:
+  min_length:
+    warning: 3
+    error: 1
+  max_length:
+    warning: 40
+    error: 60
+  excluded:
+    - ID
+    - UI
+
+identifier_name:
+  excluded:
+    - id
+    - x
+    - y
+    - w
+    - h
+    - i
+    - j
+
+function_parameter_count:
+  warning: 5
+  error: 7
+
+type_body_length:
+  warning: 300
+  error: 500
+
+file_length:
+  warning: 400
+  error: 800
+  ignore_comment_only_lines: true
+
+
+# Reporter
+reporter: xcode
+
