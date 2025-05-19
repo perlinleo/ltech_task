@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -41,7 +41,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C011468D2DD623B90030E9EF /* Exceptions for "ltech" folder in "ltech" target */ = {
+		C011468D2DD623B90030E9EF /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -51,24 +51,9 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C01146672DD623B80030E9EF /* ltech */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C011468D2DD623B90030E9EF /* Exceptions for "ltech" folder in "ltech" target */,
-			);
-			path = ltech;
-			sourceTree = "<group>";
-		};
-		C011467E2DD623B90030E9EF /* ltechTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ltechTests;
-			sourceTree = "<group>";
-		};
-		C01146882DD623B90030E9EF /* ltechUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ltechUITests;
-			sourceTree = "<group>";
-		};
+		C01146672DD623B80030E9EF /* ltech */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (C011468D2DD623B90030E9EF /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ltech; sourceTree = "<group>"; };
+		C011467E2DD623B90030E9EF /* ltechTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ltechTests; sourceTree = "<group>"; };
+		C01146882DD623B90030E9EF /* ltechUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ltechUITests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +213,7 @@
 				};
 			};
 			buildConfigurationList = C01146602DD623B80030E9EF /* Build configuration list for PBXProject "ltech" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -241,7 +227,6 @@
 				C04E54612DDA31A5000157EB /* XCRemoteSwiftPackageReference "input-mask-ios" */,
 				C04E546B2DDA4AAC000157EB /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
-			preferredProjectObjectVersion = 77;
 			productRefGroup = C01146662DD623B80030E9EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
