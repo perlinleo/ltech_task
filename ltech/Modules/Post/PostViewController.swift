@@ -5,69 +5,73 @@
 //  Created by blacksnow on 5/18/25.
 //
 
-import UIKit
 import Kingfisher
+import UIKit
 
 final class PostViewController: UIViewController, PostView {
     // MARK: Public Properties
+
     var interactor: PostInteracting?
     var router: PostRouting?
-    
+
     // MARK: Visual Components
+
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = FontBook.footnote
         label.textColor = Color.gray
-        
+
         return label
     }()
-    
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = FontBook.title
-        
+
         return label
     }()
-    
+
     private lazy var textLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = .zero
         label.font = FontBook.body
-        
+
         return label
     }()
-    
+
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
-    
+
     private lazy var imageView: UIImageView = {
-       let view = UIImageView()
+        let view = UIImageView()
         view.contentMode = .scaleToFill
-        
+
         return view
     }()
-    
+
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [dateLabel, titleLabel, imageView, textLabel])
         stackView.axis = .vertical
         stackView.spacing = Sizes.Spacing.x2
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return stackView
-        
+
     }()
-    
+
     // MARK: - LifeCycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         interactor?.setupInitialState()
     }
-    
+
     // MARK: - SetupUI
+
     private func setupUI() {
         view.backgroundColor = .systemBackground
 
@@ -85,11 +89,12 @@ final class PostViewController: UIViewController, PostView {
             mainStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -Sizes.Spacing.x2),
             mainStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -Sizes.Spacing.x2),
 
-            mainStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -Sizes.Spacing.x4)
+            mainStackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -Sizes.Spacing.x4),
         ])
     }
-    
+
     // MARK: - PostView
+
     func displayPostResult(viewModel: PostModels.Post.ViewModel) {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

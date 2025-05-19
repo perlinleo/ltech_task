@@ -6,6 +6,7 @@
 //
 
 // MARK: - View
+
 protocol AuthView: AnyObject {
     func displayLoginResult(viewModel: AuthModels.Login.ViewModel)
     func displayPhoneMaskResult(viewModel: AuthModels.PhoneMask.ViewModel)
@@ -13,12 +14,14 @@ protocol AuthView: AnyObject {
 }
 
 // MARK: - Interactor
+
 protocol AuthInteracting {
     func setupInitialState()
     func login(request: AuthModels.Login.Request)
 }
 
 // MARK: - Presenter
+
 protocol AuthPresenting {
     func presentLoginResult(response: AuthModels.Login.Response)
     func presentMaskResult(response: AuthModels.PhoneMask.Response)
@@ -26,6 +29,7 @@ protocol AuthPresenting {
 }
 
 // MARK: - Router
+
 protocol AuthRouting {
     func routeToFeed()
 }

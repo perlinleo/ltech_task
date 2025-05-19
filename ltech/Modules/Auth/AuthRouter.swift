@@ -7,12 +7,13 @@
 
 import UIKit
 
-
 final class AuthRouter: AuthRouting {
     // MARK: - Public Properties
+
     weak var viewController: UIViewController?
 
     // MARK: - AuthRouting
+
     func routeToFeed() {
         let feedViewController = FeedAssembly.build()
         viewController?.navigationController?.pushViewController(feedViewController, animated: true)

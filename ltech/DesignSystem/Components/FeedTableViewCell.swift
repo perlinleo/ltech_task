@@ -5,13 +5,14 @@
 //  Created by blacksnow on 5/16/25.
 //
 
-import UIKit
 import Kingfisher
+import UIKit
 
 final class FeedTableViewCell: UITableViewCell {
     static let reuseIdentifier = "CustomTableViewCell"
 
     // MARK: - Visual Components
+
     private let cellImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +20,7 @@ final class FeedTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         imageView.widthAnchor.constraint(equalToConstant: Constants.previewImageHeight).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: Constants.previewImageHeight).isActive = true
-        
+
         return imageView
     }()
 
@@ -27,7 +28,7 @@ final class FeedTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = FontBook.title
         label.numberOfLines = Constants.titleNumberOfLines
-        
+
         return label
     }()
 
@@ -36,7 +37,7 @@ final class FeedTableViewCell: UITableViewCell {
         label.font = FontBook.body
         label.textColor = .secondaryLabel
         label.numberOfLines = Constants.descriptionNumberOfLines
-        
+
         return label
     }()
 
@@ -46,7 +47,7 @@ final class FeedTableViewCell: UITableViewCell {
         label.textColor = .tertiaryLabel
         label.textAlignment = .left
         label.setContentHuggingPriority(.required, for: .horizontal)
-        
+
         return label
     }()
 
@@ -54,7 +55,7 @@ final class FeedTableViewCell: UITableViewCell {
         let stack = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel, dateLabel])
         stack.axis = .vertical
         stack.spacing = Sizes.Spacing.x0_5
-        
+
         return stack
     }()
 
@@ -69,6 +70,7 @@ final class FeedTableViewCell: UITableViewCell {
     }()
 
     // MARK: - Init
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(mainStack)
@@ -77,18 +79,19 @@ final class FeedTableViewCell: UITableViewCell {
             mainStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Sizes.Spacing.x1_5),
             mainStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Sizes.Spacing.x2),
             mainStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Sizes.Spacing.x2),
-            mainStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Sizes.Spacing.x1_5)
+            mainStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Sizes.Spacing.x1_5),
         ])
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Public
 
     func configure(image: String?, title: String, description: String, date: Date) {
-        if let image, let imageURL = URL(string: "http://dev-exam.l-tech.ru"+image) {
+        if let image, let imageURL = URL(string: "http://dev-exam.l-tech.ru" + image) {
             cellImageView.kf.setImage(with: imageURL)
         }
         titleLabel.text = title

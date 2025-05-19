@@ -5,8 +5,8 @@
 //  Created by blacksnow on 5/16/25.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 
 protocol NetworkTarget {
     var baseURL: URL { get }

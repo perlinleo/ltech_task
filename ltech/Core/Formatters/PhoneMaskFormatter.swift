@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct PhoneMaskFormatter {
+enum PhoneMaskFormatter {
     static func convertMask(_ mask: String?) -> String {
         guard let mask else { return "" }
-        
+
         let pattern = "Х+"
         guard let regex = try? NSRegularExpression(pattern: pattern) else {
             return mask
         }
 
-        let nsRange = NSRange(mask.startIndex..<mask.endIndex, in: mask)
+        let nsRange = NSRange(mask.startIndex ..< mask.endIndex, in: mask)
         var result = mask
         let matches = regex.matches(in: mask, range: nsRange).reversed()
 

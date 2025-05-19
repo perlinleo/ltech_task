@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FeedAssembly {
+enum FeedAssembly {
     static func build() -> UIViewController {
         let view = FeedViewController()
         let presenter = FeedPresenter()

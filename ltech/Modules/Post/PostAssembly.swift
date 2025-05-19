@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PostAssembly {
+enum PostAssembly {
     static func build(post: PostDTO) -> UIViewController {
         let view = PostViewController()
         let presenter = PostPresenter()

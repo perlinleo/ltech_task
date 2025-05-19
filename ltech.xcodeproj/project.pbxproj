@@ -10,6 +10,8 @@
 		C04E53FE2DDA2D1E000157EB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C0FAA6352DD6A5010052B5A5 /* Alamofire */; };
 		C04E54632DDA31A5000157EB /* InputMask in Frameworks */ = {isa = PBXBuildFile; productRef = C04E54622DDA31A5000157EB /* InputMask */; };
 		C04E546D2DDA4AAC000157EB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C04E546C2DDA4AAC000157EB /* Kingfisher */; };
+		C04E547E2DDB2827000157EB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C04E547D2DDB2827000157EB /* .swiftlint.yml */; };
+		C04E54802DDB2C9F000157EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C04E547F2DDB2C9F000157EB /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		C01146652DD623B80030E9EF /* ltech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ltech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C011467B2DD623B90030E9EF /* ltechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ltechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C01146852DD623B90030E9EF /* ltechUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ltechUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C04E547D2DDB2827000157EB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		C04E547F2DDB2C9F000157EB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C0FAA6502DD744A70052B5A5 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -103,6 +107,8 @@
 				C01146882DD623B90030E9EF /* ltechUITests */,
 				C0FAA64F2DD744A60052B5A5 /* Frameworks */,
 				C01146662DD623B80030E9EF /* Products */,
+				C04E547D2DDB2827000157EB /* .swiftlint.yml */,
+				C04E547F2DDB2C9F000157EB /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,6 +258,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C04E547E2DDB2827000157EB /* .swiftlint.yml in Resources */,
+				C04E54802DDB2C9F000157EB /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,11 +16,11 @@ enum Sizes {
         static var x3: CGFloat = 24
         static var x4: CGFloat = 32
     }
-    
+
     enum Corners {
         static var `default`: CGFloat = 14
     }
-    
+
     enum Borders {
         static var defaultWidth: CGFloat = 1.5
     }

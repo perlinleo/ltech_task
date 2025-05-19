@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class AuthAssembly {
+enum AuthAssembly {
     static func build() -> UIViewController {
         let view = AuthViewController()
         let presenter = AuthPresenter()

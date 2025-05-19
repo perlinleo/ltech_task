@@ -14,9 +14,9 @@ enum KeychainWorker {
         guard let data = value?.data(using: .utf8) else { return false }
 
         let query: [String: Any] = [
-            kSecClass as String       : kSecClassGenericPassword,
-            kSecAttrAccount as String : key.rawValue,
-            kSecValueData as String   : data
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key.rawValue,
+            kSecValueData as String: data,
         ]
 
         SecItemDelete(query as CFDictionary)
@@ -28,10 +28,10 @@ enum KeychainWorker {
     @discardableResult
     static func load(key: KeychainKey) -> String? {
         let query: [String: Any] = [
-            kSecClass as String       : kSecClassGenericPassword,
-            kSecAttrAccount as String : key.rawValue,
-            kSecReturnData as String  : true,
-            kSecMatchLimit as String  : kSecMatchLimitOne
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key.rawValue,
+            kSecReturnData as String: true,
+            kSecMatchLimit as String: kSecMatchLimitOne,
         ]
 
         var item: AnyObject?
@@ -43,8 +43,8 @@ enum KeychainWorker {
 
     static func delete(key: KeychainKey) {
         let query: [String: Any] = [
-            kSecClass as String       : kSecClassGenericPassword,
-            kSecAttrAccount as String : key.rawValue
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key.rawValue,
         ]
 
         SecItemDelete(query as CFDictionary)

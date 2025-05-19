@@ -1,5 +1,5 @@
 //
-//  Untitled.swift
+//  FontBook.swift
 //  ltech
 //
 //  Created by blacksnow on 5/15/25.
@@ -8,7 +8,6 @@
 import UIKit
 
 enum FontBook {
-    
     static let subHeadlineSemibold: UIFont = .systemFont(ofSize: 15, weight: .semibold)
     static let subHeadline: UIFont = .systemFont(ofSize: 15, weight: .medium)
     static let footnote: UIFont = .systemFont(ofSize: 13, weight: .medium)

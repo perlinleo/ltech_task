@@ -23,7 +23,8 @@ final class Button: UIButton {
         setup(title: title)
     }
 
-    required init?(coder: NSCoder) {
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -42,7 +43,7 @@ final class Button: UIButton {
 
         NSLayoutConstraint.activate([
             spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
-            spinner.centerYAnchor.constraint(equalTo: centerYAnchor)
+            spinner.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
 
         updateBackground()
@@ -103,15 +104,16 @@ final class Button: UIButton {
     }
 
     private func animateTransform(scale: CGFloat) {
-        UIView.animate(withDuration: 0.3,
-                       delay: 0,
-                       usingSpringWithDamping: 1,
-                       initialSpringVelocity: 0.5,
-                       options: [.curveEaseInOut],
-                       animations: {
-            self.transform = CGAffineTransform(scaleX: scale, y: scale)
-        }, completion: nil)
+        UIView.animate(
+            withDuration: 0.3,
+            delay: 0,
+            usingSpringWithDamping: 1,
+            initialSpringVelocity: 0.5,
+            options: [.curveEaseInOut],
+            animations: {
+                self.transform = CGAffineTransform(scaleX: scale, y: scale)
+            },
+            completion: nil
+        )
     }
 }
-
-

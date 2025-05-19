@@ -11,7 +11,7 @@ enum ValidationError: LocalizedError {
     case emptyField
     case invalidPhoneNumber
     case wrongPassword
-    
+
     var errorDescription: String? {
         switch self {
         case .emptyField:

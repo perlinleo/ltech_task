@@ -20,26 +20,26 @@ enum AuthModels {
             let error: Error?
         }
     }
-    
+
     enum PrefillCredentials {
         struct Response {
             let phone: String
             let password: String
             let phoneMask: String
         }
-        
+
         struct ViewModel {
             let phone: String
             let password: String
             let phoneMask: String
         }
     }
-    
+
     enum PhoneMask {
         struct Response {
             let mask: String
         }
-        
+
         struct ViewModel {
             let mask: String
         }

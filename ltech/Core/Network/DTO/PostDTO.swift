@@ -30,10 +30,13 @@ struct PostDTO: Decodable {
         let formatter = ISO8601DateFormatter()
 
         guard let parsedDate = formatter.date(from: dateString) else {
-            throw DecodingError.dataCorruptedError(forKey: .date, in: container, debugDescription: "Expected ISO 8601 date string")
+            throw DecodingError.dataCorruptedError(
+                forKey: .date,
+                in: container,
+                debugDescription: "Expected ISO 8601 date string"
+            )
         }
 
         date = parsedDate
     }
 }
-

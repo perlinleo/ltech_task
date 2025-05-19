@@ -10,7 +10,7 @@ import Alamofire
 final class NetworkWorker {
     func request<T: Decodable>(
         _ target: NetworkTarget,
-        responseType: T.Type,
+        responseType _: T.Type,
         completion: @escaping (Result<T, AFError>) -> Void
     ) {
         let url = target.baseURL.appendingPathComponent(target.path)
