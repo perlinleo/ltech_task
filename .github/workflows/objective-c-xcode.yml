@@ -1,30 +1,41 @@
-name: Xcode - Build and Analyze
+name: iOS CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [main]
   pull_request:
-    branches: [ "master" ]
+    branches: [main]
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: macos-15
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install xcpretty
-        run: gem install xcpretty
+      - name: Set up Xcode 16
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '16.0'
 
-      - name: Show available schemes (debug info)
-        run: xcodebuild -list -project ltech.xcodeproj
-
-      - name: Build and Analyze
+      - name: Install dependencies
         run: |
-          xcodebuild clean build analyze \
-            -scheme ltech \
+          brew install xcbeautify
+
+      - name: Build project
+        run: |
+          xcodebuild clean build \
             -project ltech.xcodeproj \
-            -destination 'platform=iOS Simulator,name=iPhone 15' \
-            | xcpretty && exit ${PIPESTATUS[0]}
+            -scheme ltech \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' \
+            | xcbeautify
+
+      - name: Run tests
+        run: |
+          xcodebuild test \
+            -project ltech.xcodeproj \
+            -scheme ltech \
+            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' \
+            | xcbeautify
 
