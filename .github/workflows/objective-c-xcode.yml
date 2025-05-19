@@ -1,31 +1,30 @@
-name: Xcode Build (Xcode 16)
+name: iOS CI
 
 on:
   push:
-    branches: ["master"]
+    branches: [master]
   pull_request:
-    branches: ["master"]
+    branches: [master]
 
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: macos-15
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Resolve Swift Packages
-        run: |
-          xcodebuild -resolvePackageDependencies \
-            -project ltech.xcodeproj \
-            -scheme ltech
+      - name: Select Xcode 16.2
+        run: sudo xcode-select -switch /Applications/Xcode_16.2.app
 
-      - name: Build for iOS Simulator (iPhone 16, OS 18.4)
+      - name: Install xcbeautify
+        run: brew install xcbeautify
+
+      - name: Build and test
         run: |
+          set -o pipefail
           xcodebuild clean build \
             -project ltech.xcodeproj \
             -scheme ltech \
-            -destination "platform=iOS Simulator,id=87000D76-496F-4F91-89A7-AF6809C4A611" \
-            CODE_SIGNING_ALLOWED=NO \
-          | xcbeautify
-
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.4' \
+            CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO | xcbeautify
