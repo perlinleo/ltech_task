@@ -14,28 +14,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Xcode 16
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: '16.0'
+      - name: Select Xcode 16.2
+        run: sudo xcode-select -switch /Applications/Xcode_16.2.app
 
-      - name: Install dependencies
-        run: |
-          brew install xcbeautify
+      - name: Install xcbeautify
+        run: brew install xcbeautify
 
-      - name: Build project
+      - name: Build and test
         run: |
-          xcodebuild clean build \
-            -project ltech.xcodeproj \
-            -scheme ltech \
+          set -o pipefail
+          xcodebuild clean test \
+            -project YourProject.xcodeproj \
+            -scheme YourScheme \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' \
-            | xcbeautify
-
-      - name: Run tests
-        run: |
-          xcodebuild test \
-            -project ltech.xcodeproj \
-            -scheme ltech \
-            -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' \
-            | xcbeautify
+            CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO | xcbeautify
 
