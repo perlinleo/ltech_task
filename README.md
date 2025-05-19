@@ -1,5 +1,11 @@
 # ltech
 
+![Build](https://github.com/perlinleo/ltech_task/actions/workflows/objective-c-xcode.yml/badge.svg?branch=master)
+
+
+
+
+
 ![Swift](https://img.shields.io/badge/swift-5.9-orange?logo=swift)
 ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey?logo=apple)
 ![SwiftLint](https://img.shields.io/badge/style-SwiftLint-blue?logo=swift)
