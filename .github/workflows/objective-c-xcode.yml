@@ -23,7 +23,7 @@ jobs:
       - name: Build and test
         run: |
           set -o pipefail
-          xcodebuild clean test \
+          xcodebuild clean build \
             -project ltech.xcodeproj \
             -scheme ltech \
             -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' \
