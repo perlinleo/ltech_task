@@ -7,7 +7,25 @@
 		<key>ltech.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>C01146642DD623B80030E9EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C011467A2DD623B90030E9EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C01146842DD623B90030E9EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
